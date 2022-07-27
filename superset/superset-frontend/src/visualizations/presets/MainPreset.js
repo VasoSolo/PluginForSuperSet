@@ -79,9 +79,6 @@ import {
 } from 'src/filters/components/';
 import { PivotTableChartPlugin as PivotTableChartPluginV2 } from '@superset-ui/plugin-chart-pivot-table';
 import { HandlebarsChartPlugin } from '@superset-ui/plugin-chart-handlebars';
-import { SupersetPluginChartTest } from 'superset-plugin-chart-test';
-import { SupersetPluginChartHorizontalBar } from 'superset-plugin-chart-horizontal-bar';
-import { LiquidChartPlugin } from 'superset-plugin-chart-liquid';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
 import TimeTableChartPlugin from '../TimeTable';
 
@@ -169,17 +166,7 @@ export default class MainPreset extends Preset {
         new TimeGrainFilterPlugin().configure({ key: 'filter_timegrain' }),
         new EchartsTreeChartPlugin().configure({ key: 'tree_chart' }),
         new HandlebarsChartPlugin().configure({ key: 'handlebars' }),
-        new SupersetPluginChartTest().configure({ 
-          key: 'superset-plugin-chart-test',
-        }),
-        new SupersetPluginChartHorizontalBar().configure({ 
-          key: 'superset-plugin-chart-horizontal-bar',
-        }),
-        new LiquidChartPlugin().configure({
-          key: 'liquid',
-        }),
-      //.register();
-      ...experimentalplugins,
+        ...experimentalplugins,
       ],
     });
   }
