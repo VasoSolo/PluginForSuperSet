@@ -79,6 +79,7 @@ import {
 } from 'src/filters/components/';
 import { PivotTableChartPlugin as PivotTableChartPluginV2 } from '@superset-ui/plugin-chart-pivot-table';
 import { HandlebarsChartPlugin } from '@superset-ui/plugin-chart-handlebars';
+import { SupersetPluginChartHorizontalBar } from 'superset-plugin-chart-horizontal-bar';
 import FilterBoxChartPlugin from '../FilterBox/FilterBoxChartPlugin';
 import TimeTableChartPlugin from '../TimeTable';
 
@@ -158,6 +159,9 @@ export default class MainPreset extends Preset {
         }),
         new EchartsTimeseriesStepChartPlugin().configure({
           key: 'echarts_timeseries_step',
+        }),
+        new SupersetPluginChartHorizontalBar().configure({
+          key: 'superset-plugin-chart-horizontal-bar',
         }),
         new SelectFilterPlugin().configure({ key: 'filter_select' }),
         new RangeFilterPlugin().configure({ key: 'filter_range' }),
